@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {ImageBackground, ScrollView, StyleSheet} from 'react-native';
 import {View, Text} from 'react-native';
 import Slick from 'react-native-slick';
 import Navbar from '../components/navbar';
@@ -9,6 +9,7 @@ import image3 from '../assets/slider3.jpg';
 import {Image} from 'react-native';
 import {categories} from '../../dummy/categories';
 import HomepageSliders from '../components/homepageSliders';
+import {BlurView} from '@react-native-community/blur';
 import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
 function Browse() {
@@ -44,12 +45,32 @@ function Browse() {
           }}>
           {categories.map((item, id) => (
             <View key={id} style={styles.category}>
-              <Image style={styles.categoryImage} source={item.image} />
+              <View
+                style={{
+                  ...styles.shadow,
+                  backgroundColor: item.backgroundColor,
+                }}>
+                {/* <BlurView
+                  blurType="regular"
+                  blurAmount={50}
+                  style={{
+                    backgroundColor: item.backgroundColor,
+                    width: 50,
+                    height: 50,
+                  }}></BlurView> */}
+              </View>
+              <Image
+                source={item.image}
+                style={{
+                  ...styles.categoryImage,
+                  transform: [{rotateY: id === 0 ? '180deg' : '0deg'}],
+                }}
+              />
               <Text
                 style={{
                   color: '#333',
                   fontSize: 16,
-                  marginTop: 5,
+                  marginTop: 10,
                   textTransform: 'capitalize',
                 }}>
                 {item.text}
@@ -98,10 +119,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     marginBottom: 20,
+    position: 'relative',
+  },
+  shadow: {
+    position: 'absolute',
+    width: 65,
+    height: 65,
+    left: '-50%',
+    top: '-50%',
+    transform: [{translateX: 90}, {translateY: 50}],
+    zIndex: 0,
+    borderRadius: 999,
   },
   categoryImage: {
-    width: 75,
-    height: 75,
+    width: 65,
+    height: 65,
     resizeMode: 'cover',
     // borderRadius: 999,
   },
