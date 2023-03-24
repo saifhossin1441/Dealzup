@@ -42,9 +42,6 @@ function OfferDealsFlyers() {
     <ScrollView>
       <Navbar />
       <ScrollView style={styles.body}>
-        <View style={{marginTop: 5}}>
-          <Image style={styles.image} source={image1} />
-        </View>
         <View style={styles.optionConatiner}>
           <TouchableOpacity
             activeOpacity={0.5}
@@ -128,10 +125,7 @@ function OfferDealsFlyers() {
               </TouchableOpacity>
             </View>
             <RadioButtonRN
-              data={[
-                {label: 'Earliest To Latest'},
-                {label: 'Latest To Earliest'},
-              ]}
+              data={[{label: 'Newest First'}, {label: 'Oldest First'}]}
               box={false}
               circleSize={10}
               activeColor="#ff7420"
