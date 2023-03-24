@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-function Navbar() {
+function Navbar({routeName}) {
   return (
     <View style={styles.navbar}>
       <View style={styles.header}>
@@ -25,7 +25,7 @@ function Navbar() {
               fontWeight: '500',
               verticalAlign: 'middle',
             }}>
-            Browse
+            {routeName}
           </Text>
         </View>
         <View style={styles.header}>

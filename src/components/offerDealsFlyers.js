@@ -22,7 +22,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import CheckBox from 'react-native-check-box';
 import RadioButtonRN from 'radio-buttons-react-native';
 import {categories} from '../../dummy/categories';
-function OfferDealsFlyers() {
+function OfferDealsFlyers({routeName}) {
   const [filterOption, setfilterOption] = useState(false);
   const [sortOption, setsortOption] = useState(false);
   const [sortValue, setsortValue] = useState('');
@@ -40,7 +40,7 @@ function OfferDealsFlyers() {
   };
   return (
     <ScrollView>
-      <Navbar />
+      <Navbar routeName={routeName} />
       <ScrollView style={styles.body}>
         <View style={styles.optionConatiner}>
           <TouchableOpacity

@@ -2,7 +2,7 @@ import React from 'react';
 import OfferDealsFlyers from '../components/offerDealsFlyers';
 
 function Flyers() {
-  return <OfferDealsFlyers />;
+  return <OfferDealsFlyers routeName="Flyers" />;
 }
 
 export default Flyers;

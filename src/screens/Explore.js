@@ -15,7 +15,7 @@ import ticket from '../assets/token.png';
 function Explore() {
   return (
     <ScrollView style={styles.body}>
-      <Navbar />
+      <Navbar routeName="Explore" />
       <View style={styles.wrapper}>
         <Slick
           showsButtons={false}
