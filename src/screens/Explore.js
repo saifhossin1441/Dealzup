@@ -50,14 +50,16 @@ function Explore() {
                   ...styles.shadow,
                   backgroundColor: item.backgroundColor,
                 }}>
-                {/* <BlurView
-                  blurType="regular"
-                  blurAmount={50}
+                <BlurView
+                  overlayColor=""
+                  blurType="light"
+                  blurAmount={10}
+                  blurRadius={5}
                   style={{
-                    backgroundColor: item.backgroundColor,
-                    width: 50,
-                    height: 50,
-                  }}></BlurView> */}
+                    width: '100%',
+                    height: '100%',
+                  }}
+                />
               </View>
               <Image
                 source={item.image}
@@ -124,13 +126,16 @@ const styles = StyleSheet.create({
   },
   shadow: {
     position: 'absolute',
-    width: 65,
-    height: 65,
+    width: 70,
+    height: 70,
+    overflow: 'hidden',
     left: '-50%',
     top: '-50%',
-    transform: [{translateX: 90}, {translateY: 50}],
+    transform: [{translateX: 85}, {translateY: 50}],
     zIndex: 0,
     borderRadius: 999,
+    borderWidth: 4,
+    borderColor: 'rgba(255,255,255,.05)',
   },
   categoryImage: {
     width: 65,
