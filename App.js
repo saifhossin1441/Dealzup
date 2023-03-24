@@ -1,13 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
-import Browse from './src/screens/browse';
+import RootNavigator from './src/navigators/RootNavigator';
 
 function App() {
-  return (
-    <View>
-      <Browse />
-    </View>
-  );
+  return <RootNavigator />;
 }
 
 export default App;

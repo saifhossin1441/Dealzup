@@ -12,7 +12,7 @@ import HomepageSliders from '../components/homepageSliders';
 import {BlurView} from '@react-native-community/blur';
 import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
-function Browse() {
+function Explore() {
   return (
     <ScrollView style={styles.body}>
       <Navbar />
@@ -87,7 +87,8 @@ function Browse() {
 }
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#f7f7f7',
+    // backgroundColor: '#f3f3f3',
+    backgroundColor: '#fafafa',
     height: '100%',
   },
   wrapper: {
@@ -143,4 +144,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-export default Browse;
+export default Explore;
