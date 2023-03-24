@@ -7,24 +7,26 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 function Navbar() {
   return (
-    <View style={styles.navbar}>
-      <View style={styles.header}>
-        <Text
-          style={{
-            color: '#fff',
-            fontSize: 25,
-            fontWeight: '600',
-          }}>
-          Logo
-        </Text>
+    <View style={{backgroundColor: '#f7f7f7'}}>
+      <View style={styles.navbar}>
         <View style={styles.header}>
-          <Entypo
-            style={{marginRight: 20}}
-            name="location"
-            size={23}
-            color="#fff"
-          />
-          <FontAwesome5 name="business-time" size={23} color="#fff" />
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 25,
+              fontWeight: '600',
+            }}>
+            Logo
+          </Text>
+          <View style={styles.header}>
+            <Entypo
+              style={{marginRight: 20}}
+              name="location"
+              size={23}
+              color="#fff"
+            />
+            <FontAwesome5 name="business-time" size={23} color="#fff" />
+          </View>
         </View>
       </View>
     </View>
