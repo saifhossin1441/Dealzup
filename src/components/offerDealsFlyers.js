@@ -22,6 +22,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import CheckBox from 'react-native-check-box';
 import RadioButtonRN from 'radio-buttons-react-native';
 import {categories} from '../../dummy/categories';
+import InsetShadow from 'react-native-inset-shadow';
 function OfferDealsFlyers({routeName}) {
   const [filterOption, setfilterOption] = useState(false);
   const [sortOption, setsortOption] = useState(false);
@@ -174,7 +175,9 @@ function OfferDealsFlyers({routeName}) {
                 <Feather name="x" size={25} color="#333" />
               </TouchableOpacity>
             </View>
-            <Text style={{...styles.modalText, padding: 15}}>Categories:</Text>
+            <Text style={{...styles.modalText, padding: 15, paddingTop: 0}}>
+              Categories:
+            </Text>
             <ScrollView
               style={styles.categoriesConatiner}
               contentContainerStyle={{alignItems: 'flex-start'}}>
@@ -185,10 +188,10 @@ function OfferDealsFlyers({routeName}) {
                   key={id}
                   style={{
                     ...styles.checkbox,
-                    backgroundColor:
-                      id % 2 === 0
-                        ? 'rgba(178, 212, 221, .1)'
-                        : 'rgba(0,0,0,.03)',
+                    // backgroundColor:
+                    //   id % 2 === 0
+                    //     ? 'rgba(178, 212, 221, .1)'
+                    //     : 'rgba(0,0,0,.03)',
                   }}>
                   <CheckBox
                     onClick={() => handleChange(item.text)}
@@ -206,12 +209,23 @@ function OfferDealsFlyers({routeName}) {
                 marginVertical: 15,
                 marginLeft: 'auto',
                 borderRadius: 5,
+                height: 35,
               }}>
-              <Pressable
-                style={styles.button}
-                android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
-                <Text style={styles.buttonText}>APPLY</Text>
-              </Pressable>
+              <InsetShadow
+                style={{borderRadius: 5}}
+                shadowColor="#000000"
+                top={true}
+                left={true}
+                bottom={true}
+                right={true}
+                shadowRadius={10}
+                shadowOpacity={1}>
+                <Pressable
+                  style={{...styles.button, height: '100%'}}
+                  android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
+                  <Text style={styles.buttonText}>APPLY</Text>
+                </Pressable>
+              </InsetShadow>
             </View>
           </View>
         </View>
