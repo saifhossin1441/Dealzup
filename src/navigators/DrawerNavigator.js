@@ -22,6 +22,7 @@ import {
   useDerivedValue,
   withTiming,
 } from 'react-native-reanimated';
+import Refer from '../screens/refer';
 
 const Drawer = createDrawerNavigator();
 
@@ -159,7 +160,7 @@ export default function DrawerNavigator() {
       />
       <Drawer.Screen
         name="Refer & Earn"
-        component={TabNavigator}
+        component={Refer}
         options={{
           item: {
             icon: require('../assets/refer.png'),

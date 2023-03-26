@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/FontAwesome5';
 
-function Navbar({route, navigation}) {
+function Navbar({route, navigation, no_icons, no_search, no_notification}) {
   return (
     <View style={styles.navbar}>
       <View style={styles.header}>
@@ -14,14 +14,14 @@ function Navbar({route, navigation}) {
             <Octicons
               name="three-bars"
               color="#333"
-              size={22}
+              size={20}
               style={{marginRight: 20}}
             />
           </Pressable>
           <Text
             style={{
               color: '#333',
-              fontSize: 28,
+              fontSize: 22,
               fontWeight: '500',
               verticalAlign: 'middle',
             }}>
@@ -35,14 +35,18 @@ function Navbar({route, navigation}) {
             size={23}
             color="#333"
           /> */}
-          <Ionicons
-            name="search"
-            style={{marginRight: 20}}
-            size={22}
-            color="#333"
-          />
+          {no_icons || no_search ? null : (
+            <Ionicons
+              name="search"
+              style={{marginRight: 20}}
+              size={22}
+              color="#333"
+            />
+          )}
           {/* <Material name="storefront-outline" size={23} color="#333" /> */}
-          <Fontisto name="bell" size={21} color="#333" />
+          {no_icons || no_notification ? null : (
+            <Fontisto name="bell" size={21} color="#333" />
+          )}
         </View>
       </View>
     </View>
