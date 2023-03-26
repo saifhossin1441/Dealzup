@@ -1,23 +1,23 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {StyleSheet} from 'react-native';
-import {View} from 'react-native';
+import {View, Pressable, Text, StyleSheet} from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Fontisto from 'react-native-vector-icons/FontAwesome5';
 
-function Navbar({routeName}) {
+function Navbar({route, navigation}) {
   return (
     <View style={styles.navbar}>
       <View style={styles.header}>
         <View style={styles.navName}>
-          <Octicons
-            name="three-bars"
-            color="#333"
-            size={22}
-            style={{marginRight: 20}}
-          />
+          <Pressable onPress={() => navigation.openDrawer()}>
+            <Octicons
+              name="three-bars"
+              color="#333"
+              size={22}
+              style={{marginRight: 20}}
+            />
+          </Pressable>
           <Text
             style={{
               color: '#333',
@@ -25,7 +25,7 @@ function Navbar({routeName}) {
               fontWeight: '500',
               verticalAlign: 'middle',
             }}>
-            {routeName}
+            {route?.name}
           </Text>
         </View>
         <View style={styles.header}>
@@ -41,7 +41,8 @@ function Navbar({routeName}) {
             size={22}
             color="#333"
           />
-          <Material name="storefront-outline" size={23} color="#333" />
+          {/* <Material name="storefront-outline" size={23} color="#333" /> */}
+          <Fontisto name="bell" size={21} color="#333" />
         </View>
       </View>
     </View>

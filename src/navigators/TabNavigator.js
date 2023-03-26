@@ -1,5 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
+import DrawerView from '../components/DrawerView';
+import Navbar from '../components/navbar';
 import TabBar from '../components/TabBar';
 import Deals from '../screens/deals';
 import Explore from '../screens/Explore';
@@ -11,17 +13,22 @@ export default function TabNavigator() {
 
   const local_tabBar = props => <TabBar {...props} />;
 
+  const custom_header = props => <Navbar {...props} />;
+
   return (
-    <Tab.Navigator
-      tabBar={local_tabBar}
-      screenOptions={{
-        headerShown: false,
-        tabBarShowLabel: false,
-      }}>
-      <Tab.Screen name="Explore" component={Explore} />
-      <Tab.Screen name="Deals" component={Deals} />
-      <Tab.Screen name="Offers" component={Offer} />
-      <Tab.Screen name="Flyers" component={Flyers} />
-    </Tab.Navigator>
+    <DrawerView>
+      <Tab.Navigator
+        tabBar={local_tabBar}
+        screenOptions={{
+          // headerShown: false,
+          tabBarShowLabel: false,
+          header: custom_header,
+        }}>
+        <Tab.Screen name="Explore" component={Explore} />
+        <Tab.Screen name="Deals" component={Deals} />
+        <Tab.Screen name="Offers" component={Offer} />
+        <Tab.Screen name="Flyers" component={Flyers} />
+      </Tab.Navigator>
+    </DrawerView>
   );
 }

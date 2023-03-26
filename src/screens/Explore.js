@@ -12,10 +12,12 @@ import HomepageSliders from '../components/homepageSliders';
 import {BlurView} from '@react-native-community/blur';
 import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
-function Explore() {
+
+function Explore(props) {
+  console.log(Object.keys(props));
+
   return (
     <ScrollView style={styles.body}>
-      <Navbar routeName="Explore" />
       <View style={styles.wrapper}>
         <Slick
           showsButtons={false}
