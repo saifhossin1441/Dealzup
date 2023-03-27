@@ -83,9 +83,9 @@ function Explore(props) {
           ))}
         </View>
       </View>
-      <HomepageSliders heading="TOP FLYERS" />
-      <HomepageSliders heading="TOP DEALS" />
-      <HomepageSliders heading="TOP OFFERS" />
+      <HomepageSliders heading="TOP FLYERS" link="Flyers" />
+      <HomepageSliders heading="TOP DEALS" link="Deals" />
+      <HomepageSliders heading="TOP OFFERS" link="Offers" />
     </ScrollView>
   );
 }

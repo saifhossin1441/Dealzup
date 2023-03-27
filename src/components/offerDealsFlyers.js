@@ -209,21 +209,11 @@ function OfferDealsFlyers() {
                 borderRadius: 5,
                 height: 35,
               }}>
-              <InsetShadow
-                style={{borderRadius: 5}}
-                shadowColor="#000000"
-                top={true}
-                left={true}
-                bottom={true}
-                right={true}
-                shadowRadius={10}
-                shadowOpacity={1}>
-                <Pressable
-                  style={{...styles.button, height: '100%'}}
-                  android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
-                  <Text style={styles.buttonText}>APPLY</Text>
-                </Pressable>
-              </InsetShadow>
+              <Pressable
+                style={{...styles.button, height: '100%'}}
+                android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
+                <Text style={styles.buttonText}>APPLY</Text>
+              </Pressable>
             </View>
           </View>
         </View>
