@@ -9,6 +9,8 @@ import DrawerNavigator from './DrawerNavigator';
 import deviceInfoModule from 'react-native-device-info';
 import Subcategories from '../screens/Subcategories';
 import StackNavbar from '../components/StackNavbar';
+import Search from '../screens/Search';
+import Notification from '../screens/Notification';
 
 export default function StackNavigation() {
   const Stack = createStackNavigator();
@@ -24,8 +26,29 @@ export default function StackNavigation() {
         component={DrawerNavigator}
         options={{headerShown: false}}
       />
-      <Stack.Screen name="Search" component={Categories} />
-      <Stack.Screen name="Notification" component={Categories} />
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{
+          animationEnabled:
+            Platform.OS == 'android' &&
+            parseInt(deviceInfoModule.getSystemVersion()) > 9
+              ? false
+              : true,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Notification"
+        component={Notification}
+        options={{
+          animationEnabled:
+            Platform.OS == 'android' &&
+            parseInt(deviceInfoModule.getSystemVersion()) > 9
+              ? false
+              : true,
+        }}
+      />
       <Stack.Screen
         name="Categories"
         component={Categories}

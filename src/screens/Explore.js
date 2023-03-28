@@ -34,7 +34,7 @@ function Explore({navigation}) {
   const categories2 = [...categories];
   categories2.length = 5;
   return (
-    <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 40}}>
+    <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 50}}>
       <View style={styles.wrapper}>
         <Slick
           showsButtons={false}
