@@ -23,6 +23,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import Refer from '../screens/refer';
+import Navbar from '../components/navbar';
 
 const Drawer = createDrawerNavigator();
 
@@ -99,7 +100,7 @@ const CustomDrawer = props => {
     <View style={styles.container}>
       {/* header */}
       <Pressable style={styles.accounts}>
-        <Image source={require('../assets/avatar.png')} style={styles.avatar} />
+        <Image source={require('../assets/avatar.jpg')} style={styles.avatar} />
         <Text style={styles.user_name}>Anas Alam</Text>
         <Text style={styles.viewProfile}>View Profile</Text>
       </Pressable>
@@ -137,7 +138,7 @@ export default function DrawerNavigator() {
         overlayColor: 'transparent',
         swipeEdgeWidth: Platform.OS === 'android' && 180,
         sceneContainerStyle: styles.sceneStyles,
-        headerShown: false,
+        header: Navbar,
       }}
       drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen
@@ -147,6 +148,7 @@ export default function DrawerNavigator() {
           item: {
             icon: require('../assets/home-3d.png'),
           },
+          headerShown: false,
         }}
       />
       <Drawer.Screen

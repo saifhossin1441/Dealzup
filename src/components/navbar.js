@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/FontAwesome5';
 
-function Navbar({route, navigation, no_icons, no_search, no_notification}) {
+function Navbar({route, navigation}) {
   return (
     <View style={styles.navbar}>
       <View style={styles.header}>
@@ -35,7 +35,7 @@ function Navbar({route, navigation, no_icons, no_search, no_notification}) {
             size={23}
             color="#333"
           /> */}
-          {no_icons || no_search ? null : (
+          {route.params?.no_icons || route.params?.no_search ? null : (
             <Ionicons
               name="search"
               style={{marginRight: 20}}
@@ -44,7 +44,7 @@ function Navbar({route, navigation, no_icons, no_search, no_notification}) {
             />
           )}
           {/* <Material name="storefront-outline" size={23} color="#333" /> */}
-          {no_icons || no_notification ? null : (
+          {route.params?.no_icons || route.params?.no_notification ? null : (
             <Fontisto name="bell" size={21} color="#333" />
           )}
         </View>
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'orange',
     width: '100%',
     paddingHorizontal: 23,
-    paddingTop: 25,
-    paddingBottom: 20,
+    paddingTop: 20,
+    paddingBottom: 15,
     // borderBottomLeftRadius: 8,
     // borderBottomRightRadius: 8,
   },

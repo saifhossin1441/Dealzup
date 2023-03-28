@@ -14,10 +14,8 @@ import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
 
 function Explore(props) {
-  console.log(Object.keys(props));
-
   return (
-    <ScrollView style={styles.body}>
+    <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 40}}>
       <View style={styles.wrapper}>
         <Slick
           showsButtons={false}

@@ -13,8 +13,6 @@ export default function TabNavigator() {
 
   const local_tabBar = props => <TabBar {...props} />;
 
-  const custom_header = props => <Navbar {...props} />;
-
   return (
     <DrawerView>
       <Tab.Navigator
@@ -22,7 +20,7 @@ export default function TabNavigator() {
         screenOptions={{
           // headerShown: false,
           tabBarShowLabel: false,
-          header: custom_header,
+          header: Navbar,
         }}>
         <Tab.Screen name="Explore" component={Explore} />
         <Tab.Screen name="Deals" component={Deals} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -16,84 +16,83 @@ import link from '../assets/link.png';
 import Navbar from '../components/navbar';
 
 function Refer({navigation, route}) {
+  useEffect(() => {
+    navigation.setParams({
+      no_icons: true,
+    });
+  }, []);
+
   return (
-    <>
-      <Navbar no_icons navigation={navigation} route={route} />
-      <ScrollView
-        style={styles.body}
-        contentContainerStyle={{
+    <ScrollView
+      style={styles.body}
+      contentContainerStyle={{
+        flex: 1,
+        justifyContent: 'center',
+      }}>
+      <View
+        style={{
+          width: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          ...styles.body,
         }}>
-        <View
-          style={{
-            width: '100%',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginTop: 'auto',
-            ...styles.body,
-          }}>
-          <Image style={styles.illustration} source={refer} />
-          <Text style={styles.text}>
-            Share Your invite code with your friends and get points
-          </Text>
-          <Text style={styles.orange}>Invitation Code</Text>
-          <View style={styles.codeContainer}>
-            <Text style={styles.code}>deal4uy3</Text>
-            <View
-              style={{
-                ...styles.button,
-              }}>
-              <Pressable
-                style={{...styles.button, width: '100%'}}
-                android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
-                <Text style={{color: '#fff', fontSize: 18, margin: 'auto'}}>
-                  Copy
-                </Text>
-              </Pressable>
-            </View>
-          </View>
-          <Text style={{...styles.text, marginVertical: 30}}>
-            or share link via
-          </Text>
+        <Image style={styles.illustration} source={refer} />
+        <Text style={styles.text}>
+          Share Your invite code with your friends and get points
+        </Text>
+        <Text style={styles.orange}>Invitation Code</Text>
+        <View style={styles.codeContainer}>
+          <Text style={styles.code}>deal4uy3</Text>
           <View
             style={{
-              width: '75%',
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
+              ...styles.button,
             }}>
-            <TouchableOpacity style={styles.iconContainer}>
-              <Image style={styles.icon} source={messenger} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
-              <Image
-                style={{
-                  ...styles.icon,
-                  width: 50,
-                  height: 50,
-                }}
-                source={whatsapp}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
-              <Image style={{...styles.icon}} source={email} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconContainer}>
-              <Image style={{...styles.icon}} source={link} />
-            </TouchableOpacity>
+            <Pressable
+              style={{...styles.button, width: '100%'}}
+              android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
+              <Text style={{color: '#fff', fontSize: 18, margin: 'auto'}}>
+                Copy
+              </Text>
+            </Pressable>
           </View>
         </View>
-      </ScrollView>
-    </>
+        <Text style={{...styles.text, marginVertical: 30}}>
+          or share link via
+        </Text>
+        <View
+          style={{
+            width: '75%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image style={styles.icon} source={messenger} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image
+              style={{
+                ...styles.icon,
+                width: 50,
+                height: 50,
+              }}
+              source={whatsapp}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image style={{...styles.icon}} source={email} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image style={{...styles.icon}} source={link} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
   body: {
-    height: '100%',
     backgroundColor: '#fafafa',
-    display: 'flex',
-    flexDirection: 'column',
   },
   icon: {
     width: 40,
