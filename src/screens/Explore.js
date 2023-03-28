@@ -67,7 +67,6 @@ function Explore(props) {
                 source={item.image}
                 style={{
                   ...styles.categoryImage,
-                  transform: [{rotateY: id === 0 ? '180deg' : '0deg'}],
                 }}
               />
               <Text
