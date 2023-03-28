@@ -23,7 +23,7 @@ export const categories = [
       },
       {
         image: beauty,
-        text: 'Beauty & Grooming',
+        text: 'Cosmetics',
         backgroundColor: 'rgba(192, 157, 164, .1)',
       },
       {
@@ -50,7 +50,7 @@ export const categories = [
   },
   {
     image: beauty,
-    text: 'Beauty & Grooming',
+    text: 'Cosmetics',
     backgroundColor: 'rgba(192, 157, 164, .1)',
   },
   {
@@ -80,7 +80,7 @@ export const categories = [
   },
   {
     image: beauty,
-    text: 'Beauty & Grooming',
+    text: 'Cosmetics',
     backgroundColor: 'rgba(192, 157, 164, .1)',
   },
   {

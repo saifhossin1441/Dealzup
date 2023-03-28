@@ -138,7 +138,7 @@ export default function DrawerNavigator(props) {
         overlayColor: 'transparent',
         swipeEdgeWidth: Platform.OS === 'android' && 180,
         sceneContainerStyle: styles.sceneStyles,
-        header: Navbar,
+        headerShown: false,
       }}
       drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen
@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: '#e9e9e9',
   },
   view: {
     borderRadius: 5,

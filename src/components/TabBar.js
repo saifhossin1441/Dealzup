@@ -86,6 +86,8 @@ const styles = StyleSheet.create({
     elevation: 10,
     shadowColor: '#000',
     borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#77777750',
   },
   tabButton: {
     width: '25%',

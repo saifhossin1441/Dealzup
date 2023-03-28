@@ -47,7 +47,7 @@ export default function Subcategories({route, navigation}) {
         }}>
         <View style={styles.categories}>
           <View style={styles.flex}>
-            {route.params?.category.subcategories.map((item, id) => {
+            {route.params?.subcategories.map((item, id) => {
               count(id);
               return (
                 <Pressable
