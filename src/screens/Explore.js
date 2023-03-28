@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageBackground, ScrollView, StyleSheet} from 'react-native';
+import {ImageBackground, ScrollView, StyleSheet, Pressable} from 'react-native';
 import {View, Text} from 'react-native';
 import Slick from 'react-native-slick';
 import Navbar from '../components/navbar';
@@ -13,7 +13,7 @@ import {BlurView} from '@react-native-community/blur';
 import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
 
-function Explore(props) {
+function Explore({navigation}) {
   return (
     <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 40}}>
       <View style={styles.wrapper}>
@@ -44,7 +44,10 @@ function Explore(props) {
             justifyContent: 'space-around',
           }}>
           {categories.map((item, id) => (
-            <View key={id} style={styles.category}>
+            <Pressable
+              key={id}
+              style={styles.category}
+              onPress={() => navigation.navigate('Categories')}>
               <View
                 style={{
                   ...styles.shadow,
@@ -69,14 +72,15 @@ function Explore(props) {
               />
               <Text
                 style={{
-                  color: '#333',
+                  color: '#555',
                   fontSize: 16,
                   marginTop: 10,
+                  fontFamily: 'Signika-Medium',
                   textTransform: 'capitalize',
                 }}>
                 {item.text}
               </Text>
-            </View>
+            </Pressable>
           ))}
         </View>
       </View>

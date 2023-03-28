@@ -9,7 +9,8 @@ import Animated, {
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
-function Categories({route, navigation}) {
+
+export default function Subcategories({route, navigation}) {
   const colors = [
     '#9DDAD1',
     '#F3A186',
@@ -36,6 +37,7 @@ function Categories({route, navigation}) {
   const find_dimesions = ({x, y, width, height}) => {
     setwrapperWidth(width / 2);
   };
+
   return (
     <ScrollView style={styles.body}>
       <Animated.View
@@ -44,33 +46,31 @@ function Categories({route, navigation}) {
           find_dimesions(event.nativeEvent.layout);
         }}>
         <View style={styles.categories}>
-          {/* <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              marginTop: 30,
-              alignItems: 'center',
-              position: 'relative',
-            }}>
-            <View style={styles.underline}></View>
-            <Text style={styles.heading}>Browse Categories</Text>
-          </View> */}
           <View style={styles.flex}>
-            {categories.map((item, id) => {
+            {route.params?.category.subcategories.map((item, id) => {
               count(id);
               return (
                 <Pressable
-                  onPress={() => {
-                    navigation.navigate('Subcategories', {category: item});
-                  }}
+                  onPress={() => {}}
                   key={id}
                   style={{
-                    ...styles.category,
+                    ...styles.subcategory,
                     backgroundColor: colors[counter],
                   }}>
-                  <Image source={item.image} style={styles.categoryImage} />
-                  <Text style={styles.text}>{item.text}</Text>
-                  <View style={styles.circle}></View>
+                  <Image
+                    source={item.image}
+                    style={{...styles.categoryImage, marginHorizontal: 20}}
+                  />
+
+                  <Text style={{...styles.text, fontSize: 20}}>
+                    {item.text}
+                  </Text>
+                  <View
+                    style={{
+                      ...styles.circle,
+                      bottom: -100,
+                      right: -125,
+                    }}></View>
                 </Pressable>
               );
             })}
@@ -80,6 +80,7 @@ function Categories({route, navigation}) {
     </ScrollView>
   );
 }
+
 const styles = StyleSheet.create({
   body: {
     backgroundColor: '#fafafa',
@@ -97,7 +98,8 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     width: '100%',
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
+    paddingLeft: 18,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -138,12 +140,11 @@ const styles = StyleSheet.create({
   },
   subcategory: {
     width: '100%',
-    display: 'flex',
     justifyContent: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
-    height: 150,
+    height: 100,
     borderRadius: 10,
     // shadowColor: 'rgba(0,0,0,1)',
     elevation: 20,
@@ -151,8 +152,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   circle: {
-    width: 250,
-    height: 200,
+    width: 210,
+    height: 170,
     backgroundColor: 'rgba(255,255,255,.15)',
     position: 'absolute',
     bottom: -110,
@@ -160,8 +161,8 @@ const styles = StyleSheet.create({
     zIndex: 0,
   },
   categoryImage: {
-    width: 95,
-    height: 95,
+    width: 70,
+    height: 70,
     resizeMode: 'cover',
     position: 'relative',
     zIndex: 1,
@@ -169,13 +170,10 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 2,
     fontFamily: 'Signika-Medium',
-    paddingHorizontal: 10,
-    marginTop: 10,
     textTransform: 'capitalize',
     position: 'relative',
     zIndex: 1,
   },
 });
-export default Categories;

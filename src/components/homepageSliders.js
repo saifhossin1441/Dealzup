@@ -13,7 +13,10 @@ import logo1 from '../assets/logo1.jpg';
 import image1 from '../assets/slider1.jpg';
 import image2 from '../assets/slider2.jpg';
 import image3 from '../assets/slider3.jpg';
+import {useNavigation} from '@react-navigation/native';
 function HomepageSliders({heading, link}) {
+  const navigation = useNavigation();
+
   return (
     <View
       style={{
@@ -29,9 +32,12 @@ function HomepageSliders({heading, link}) {
           alignItems: 'center',
           position: 'relative',
         }}>
-        <View style={styles.underline}></View>
+        {/* <View style={styles.underline}></View> */}
         <Text style={styles.heading}> {heading}</Text>
-        <Pressable onPress={() => {}}>
+        <Pressable
+          onPress={() => {
+            navigation.navigate(link);
+          }}>
           <Feather
             style={styles.seeAll}
             name="chevron-right"
@@ -43,7 +49,7 @@ function HomepageSliders({heading, link}) {
       <View>
         <ScrollView
           horizontal={true}
-          contentContainerStyle={{paddingTop: 15, paddingBottom: 40}}>
+          contentContainerStyle={{paddingTop: 5, paddingBottom: 35}}>
           <HomeCards name="Luxary" logo={logo1} banner={image2} />
           <HomeCards name="Luxary" logo={logo1} banner={image1} />
           <HomeCards name="Luxary" logo={logo1} banner={image3} />
@@ -56,7 +62,9 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 25,
     // marginVertical: 15,
-    fontWeight: '900',
+    fontFamily: 'Signika',
+    fontWeight: '700',
+    textTransform: 'capitalize',
     // color: '#ff7420',
     color: '#ab4bea',
     letterSpacing: 1.5,

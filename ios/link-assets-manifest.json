@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Signika-Medium.ttf",
+      "sha1": "8f62f9e0b6fd792504c9f0e209578ef10fe6bd78"
+    },
+    {
+      "path": "src/assets/fonts/Signika-SemiBold.ttf",
+      "sha1": "ed25257032624547ea681942b1066c93c1853d5a"
+    },
+    {
+      "path": "src/assets/fonts/Signika.ttf",
+      "sha1": "d7a1e9962acd9c12fe1c0adcfa47f7aef247bf52"
+    }
+  ]
+}

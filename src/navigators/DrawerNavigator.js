@@ -129,7 +129,7 @@ const CustomDrawer = props => {
   );
 };
 
-export default function DrawerNavigator() {
+export default function DrawerNavigator(props) {
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   viewProfile: {
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: '500',
     color: '#333',
   },

@@ -4,8 +4,7 @@ import RootNavigator from './src/navigators/RootNavigator';
 import Categories from './src/screens/categories';
 
 function App() {
-  return <Categories />;
-  // <RootNavigator />;
+  return <RootNavigator />;
 }
 
 export default App;

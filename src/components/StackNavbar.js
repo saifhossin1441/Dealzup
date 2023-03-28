@@ -1,19 +1,21 @@
 import React from 'react';
-import {View, Pressable, Text, StyleSheet} from 'react-native';
-import Octicons from 'react-native-vector-icons/Octicons';
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
+import {View, Text, Pressable, StyleSheet} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Material from 'react-native-vector-icons/MaterialCommunityIcons';
-import Fontisto from 'react-native-vector-icons/FontAwesome5';
 
-function Navbar({route, navigation}) {
-  console.log(Object.keys(navigation));
+export default function StackNavbar({route, navigation}) {
   return (
-    <View style={styles.navbar}>
+    <View style={{...styles.navbar, paddingLeft: 22}}>
       <View style={styles.navName}>
         <Pressable
-          onPress={() => navigation.openDrawer()}
-          style={styles.button}>
-          <Octicons name="three-bars" color="#333" size={20} />
+          style={{
+            ...styles.button,
+            marginRight: 13,
+            paddingHorizontal: 0,
+          }}
+          onPress={() => navigation.goBack()}>
+          <Feather name="chevron-left" size={25} color="#333" />
         </Pressable>
         <Text
           style={{
@@ -25,32 +27,34 @@ function Navbar({route, navigation}) {
           {route?.name}
         </Text>
       </View>
+
       <View style={styles.header}>
         {route.params?.no_icons || route.params?.no_search ? null : (
           <Pressable
             style={{
               ...styles.button,
               marginTop: 0,
-              marginRight: 10,
+              marginRight: 0,
             }}
             onPress={() => navigation.navigate('Search')}>
             <Ionicons name="search" size={22} color="#333" />
           </Pressable>
         )}
-        {route.params?.no_icons || route.params?.no_notification ? null : (
-          <Pressable
-            style={{
-              ...styles.button,
-              marginTop: 0,
-              marginRight: 0,
-            }}>
-            <Fontisto name="bell" size={21} color="#333" />
-          </Pressable>
-        )}
+        {/* {route.params?.no_icons || route.params?.no_notification ? null : (
+            <Pressable
+              style={{
+                ...styles.button,
+                marginTop: 0,
+                marginRight: 0,
+              }}>
+              <Fontisto name="bell" size={21} color="#333" />
+            </Pressable>
+          )} */}
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   navbar: {
     backgroundColor: '#fafafa',
@@ -65,23 +69,21 @@ const styles = StyleSheet.create({
     // borderBottomLeftRadius: 8,
     // borderBottomRightRadius: 8,
   },
-  navName: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    // backgroundColor: 'red',
-  },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     // backgroundColor: 'blue',
   },
+  navName: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // backgroundColor: 'red',
+  },
   button: {
     padding: 5,
     marginRight: 10,
-    marginTop: 2,
+    marginTop: 4,
     // backgroundColor: 'blue',
   },
 });
-
-export default Navbar;
