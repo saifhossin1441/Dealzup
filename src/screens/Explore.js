@@ -15,7 +15,7 @@ import ticket from '../assets/token.png';
 
 function Explore({navigation}) {
   return (
-    <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 40}}>
+    <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 50}}>
       <View style={styles.wrapper}>
         <Slick
           showsButtons={false}

@@ -43,7 +43,8 @@ function Navbar({route, navigation}) {
               ...styles.button,
               transform: [{translateY: 0}],
               marginRight: 0,
-            }}>
+            }}
+            onPress={() => navigation.navigate('Notification')}>
             <Fontisto name="bell" size={21} color="#333" />
           </Pressable>
         )}

@@ -39,14 +39,14 @@ function OfferDealsFlyers() {
     }
   };
   return (
-    <ScrollView contentContainerStyle={{paddingBottom: 60}}>
+    <ScrollView contentContainerStyle={{paddingBottom: 65}}>
       <ScrollView style={styles.body}>
         <View style={styles.optionConatiner}>
           <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => setfilterOption(true)}>
             <View style={styles.option}>
-              <Feather name="filter" size={20} color="#333" />
+              <Feather name="filter" size={14} color="#333" />
               <Text style={styles.optionText}>Filter</Text>
             </View>
           </TouchableOpacity>
@@ -54,7 +54,7 @@ function OfferDealsFlyers() {
             activeOpacity={0.5}
             onPress={() => setsortOption(true)}>
             <View style={styles.option}>
-              <MaterialCommunityIcons name="sort" size={20} color="#333" />
+              <MaterialCommunityIcons name="sort" size={14} color="#333" />
               <Text style={styles.optionText}>Sort</Text>
             </View>
           </TouchableOpacity>
@@ -223,7 +223,7 @@ function OfferDealsFlyers() {
 }
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#f7f7f7',
+    backgroundColor: '#fafafa',
     height: '100%',
     paddingHorizontal: 5,
   },
@@ -264,8 +264,9 @@ const styles = StyleSheet.create({
   },
   option: {
     borderWidth: 1,
-    borderColor: 'rgba(0,0,0,.5)',
+    borderColor: 'rgba(0,0,0,.2)',
     padding: 10,
+    paddingVertical: 5,
     borderRadius: 5,
     display: 'flex',
     flexDirection: 'row',
@@ -274,7 +275,7 @@ const styles = StyleSheet.create({
   optionText: {
     color: '#333',
     marginLeft: 5,
-    fontSize: 18,
+    fontSize: 14,
     letterSpacing: 0.8,
   },
   modalWrapper: {
