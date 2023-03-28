@@ -30,7 +30,7 @@ function Navbar({route, navigation}) {
           <Pressable
             style={{
               ...styles.button,
-              marginTop: 0,
+              transform: [{translateY: 0}],
               marginRight: 10,
             }}
             onPress={() => navigation.navigate('Search')}>
@@ -41,7 +41,7 @@ function Navbar({route, navigation}) {
           <Pressable
             style={{
               ...styles.button,
-              marginTop: 0,
+              transform: [{translateY: 0}],
               marginRight: 0,
             }}>
             <Fontisto name="bell" size={21} color="#333" />
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   button: {
     padding: 5,
     marginRight: 10,
-    marginTop: 2,
+    transform: [{translateY: 0.5}],
     // backgroundColor: 'blue',
   },
 });
