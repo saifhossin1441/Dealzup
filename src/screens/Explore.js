@@ -65,7 +65,6 @@ function Explore(props) {
                 source={item.image}
                 style={{
                   ...styles.categoryImage,
-                  transform: [{rotateY: id === 0 ? '180deg' : '0deg'}],
                 }}
               />
               <Text
@@ -81,9 +80,9 @@ function Explore(props) {
           ))}
         </View>
       </View>
-      <HomepageSliders heading="TOP FLYERS" />
-      <HomepageSliders heading="TOP DEALS" />
-      <HomepageSliders heading="TOP OFFERS" />
+      <HomepageSliders heading="TOP FLYERS" link="Flyers" />
+      <HomepageSliders heading="TOP DEALS" link="Deals" />
+      <HomepageSliders heading="TOP OFFERS" link="Offers" />
     </ScrollView>
   );
 }

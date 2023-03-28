@@ -1,12 +1,19 @@
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import HomeCards from './homeCards';
 import logo1 from '../assets/logo1.jpg';
 import image1 from '../assets/slider1.jpg';
 import image2 from '../assets/slider2.jpg';
 import image3 from '../assets/slider3.jpg';
-function HomepageSliders({heading}) {
+function HomepageSliders({heading, link}) {
   return (
     <View
       style={{
@@ -24,12 +31,14 @@ function HomepageSliders({heading}) {
         }}>
         <View style={styles.underline}></View>
         <Text style={styles.heading}> {heading}</Text>
-        <Feather
-          style={styles.seeAll}
-          name="chevron-right"
-          size={25}
-          color="#ff7420"
-        />
+        <Pressable onPress={() => {}}>
+          <Feather
+            style={styles.seeAll}
+            name="chevron-right"
+            size={25}
+            color="#ff7420"
+          />
+        </Pressable>
       </View>
       <View>
         <ScrollView
