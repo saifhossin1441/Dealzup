@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#77777750',
+    borderColor: 'rgba(0,0,0,.05)',
   },
   tabButton: {
     width: '25%',
