@@ -19,11 +19,19 @@ export default function Search({route, navigation}) {
           onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" color="#333" size={25} />
         </Pressable>
-        <TextInput
-          placeholder="Search by name, category, subcategory..."
-          placeholderTextColor="#c0c0c0"
-          style={styles.searchInput}
-        />
+        <View style={styles.searchInput}>
+          <TextInput
+            placeholder="Search by name, category, subcategory..."
+            placeholderTextColor="#c0c0c0"
+            style={styles.input}
+          />
+          <Feather
+            name="search"
+            size={18}
+            color="#333"
+            style={{marginBottom: 2}}
+          />
+        </View>
       </View>
       <ScrollView contentContainerStyle={styles.history_container}>
         <View style={styles.history}>
@@ -96,15 +104,22 @@ const styles = StyleSheet.create({
   searchInput: {
     borderWidth: 1,
     borderColor: 'rgba(0,0,0,0.20)',
-    paddingVertical: 5,
-    paddingHorizontal: 15,
     marginLeft: 10,
     flex: 1,
-    borderRadius: 15,
-    color: '#333',
-    fontFamily: 'Signika',
+    borderRadius: 25,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingRight: 15,
+    paddingLeft: 5,
     // fontWeight: '',
     // backgroundColor: '#e9e9e950',
+  },
+  input: {
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    color: '#333',
+    flex: 1,
+    fontFamily: 'Signika',
   },
   history_container: {
     paddingVertical: 8,

@@ -150,13 +150,14 @@ const styles = StyleSheet.create({
   },
   notification: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#ddd',
     borderRadius: 10,
-    paddingHorizontal: 15,
-    paddingVertical: 5,
-    marginBottom: 10,
-    backgroundColor: '#fafafa',
-    elevation: 2,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    marginBottom: 20,
+    backgroundColor: '#fff',
+    elevation: 5,
+    shadowColor: '#aaa',
   },
   row: {
     flexDirection: 'row',
@@ -167,12 +168,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     color: '#333',
+    flex: 1,
     fontFamily: 'Signika-SemiBold',
   },
   time: {
     color: '#ccc',
     fontSize: 14,
     fontFamily: 'Signika-Medium',
+    marginLeft: 15,
   },
   summary: {
     color: '#aaa',

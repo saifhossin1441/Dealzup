@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,13 @@ import {
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome';
 import Foundation from 'react-native-vector-icons/Foundation';
 
-function Login() {
+function Login({navigation}) {
+  useEffect(() => {
+    navigation.setParams({
+      no_icons: true,
+    });
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -49,7 +55,9 @@ function Login() {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{...styles.button, backgroundColor: '#0e101b'}}>
+      <TouchableOpacity
+        style={{...styles.button, backgroundColor: '#0e101b'}}
+        onPress={() => navigation.navigate('Create Account')}>
         <Text style={styles.buttonText}>Create a new Account</Text>
       </TouchableOpacity>
       <View style={styles.orView}>
