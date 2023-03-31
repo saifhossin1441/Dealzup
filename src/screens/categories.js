@@ -62,7 +62,7 @@ function Categories({route, navigation}) {
                 <Pressable
                   onPress={() => {
                     navigation.navigate('Subcategories', {
-                      subcategory: item.subcategories,
+                      subcategories: item.subcategories,
                     });
                   }}
                   key={id}
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     marginBottom: 20,
-    height: 180,
+    height: 160,
     borderRadius: 10,
     // shadowColor: 'rgba(0,0,0,1)',
     elevation: 20,

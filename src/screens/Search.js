@@ -21,7 +21,7 @@ export default function Search({route, navigation}) {
         </Pressable>
         <TextInput
           placeholder="Search by name, category, subcategory..."
-          placeholderTextColor="#d0d0d0"
+          placeholderTextColor="#c0c0c0"
           style={styles.searchInput}
         />
       </View>
