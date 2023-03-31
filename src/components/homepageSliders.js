@@ -50,9 +50,9 @@ function HomepageSliders({heading, link}) {
         <ScrollView
           horizontal={true}
           contentContainerStyle={{paddingTop: 5, paddingBottom: 35}}>
-          <HomeCards name="Luxary" logo={logo1} banner={image2} />
-          <HomeCards name="Luxary" logo={logo1} banner={image1} />
-          <HomeCards name="Luxary" logo={logo1} banner={image3} />
+          <HomeCards name="Day 2 Day" logo={logo1} banner={image2} />
+          <HomeCards name="Nutuyu" logo={logo1} banner={image1} />
+          <HomeCards name="Leather Complex" logo={logo1} banner={image3} />
         </ScrollView>
       </View>
     </View>

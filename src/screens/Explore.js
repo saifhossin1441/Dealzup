@@ -62,13 +62,17 @@ function Explore({navigation}) {
             flexWrap: 'wrap',
             justifyContent: 'space-around',
           }}>
-          {categories2.map((item, id) => (
-            <>
-              {count()}
+          {categories2.map((item, id) => {
+            count();
+            return (
               <Pressable
                 key={id}
                 style={styles.category}
-                onPress={() => navigation.navigate('Categories')}>
+                onPress={() =>
+                  navigation.navigate('Subcategories', {
+                    subcategories: item.subcategories,
+                  })
+                }>
                 <View
                   style={{
                     ...styles.shadow,
@@ -91,8 +95,8 @@ function Explore({navigation}) {
                   {item.text}
                 </Text>
               </Pressable>
-            </>
-          ))}
+            );
+          })}
           <Pressable
             style={styles.category}
             onPress={() => navigation.navigate('Categories')}>
@@ -129,7 +133,8 @@ function Explore({navigation}) {
 }
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#fafafa',
+    // backgroundColor: '#fafafa',
+    backgroundColor: '#f5f6fc',
     height: '100%',
   },
   wrapper: {

@@ -84,6 +84,8 @@ const CustomDrawer = props => {
   const {state, descriptors, navigation} = props;
   const scrollRef = useRef(null);
 
+  const login = true;
+
   const drawerProgress = useDrawerProgress();
 
   const viewStyles2 = type =>
@@ -100,10 +102,21 @@ const CustomDrawer = props => {
   return (
     <View style={styles.container}>
       {/* header */}
-      <Pressable style={styles.accounts}>
-        <Image source={require('../assets/avatar.jpg')} style={styles.avatar} />
-        <Text style={styles.user_name}>Anas Alam</Text>
-        <Text style={styles.viewProfile}>View Profile</Text>
+      <Pressable
+        style={styles.accounts}
+        onPress={() => navigation.navigate(login ? 'Accounts' : 'Login')}>
+        <Image
+          source={
+            login
+              ? require('../assets/avatar.jpg')
+              : require('../assets/logo.jpeg')
+          }
+          style={styles.avatar}
+        />
+        <Text style={styles.user_name}>
+          {login ? 'Anas Alam' : 'Login/Register'}
+        </Text>
+        {login && <Text style={styles.viewProfile}>View Profile</Text>}
       </Pressable>
       {/* Drawer List Item */}
       <Animated.ScrollView
