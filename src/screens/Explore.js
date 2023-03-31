@@ -12,8 +12,27 @@ import HomepageSliders from '../components/homepageSliders';
 import {BlurView} from '@react-native-community/blur';
 import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
+import view from '../assets/viewAll.png';
 
 function Explore({navigation}) {
+  const colors = [
+    '#9DDAD1',
+    '#F3A186',
+    '#98B7E8',
+    '#EC99CE',
+    '#8281F3',
+    '#EE8787',
+    '#87D2EF',
+    '#B59AE8',
+    '#937BB4',
+  ];
+  let counter = 0;
+  const count = id => {
+    if (counter > colors.length - 2) counter = 1;
+    else counter++;
+  };
+  const categories2 = [...categories];
+  categories2.length = 5;
   return (
     <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 50}}>
       <View style={styles.wrapper}>
@@ -43,45 +62,63 @@ function Explore({navigation}) {
             flexWrap: 'wrap',
             justifyContent: 'space-around',
           }}>
-          {categories.map((item, id) => (
-            <Pressable
-              key={id}
-              style={styles.category}
-              onPress={() => navigation.navigate('Categories')}>
-              <View
-                style={{
-                  ...styles.shadow,
-                  backgroundColor: item.backgroundColor,
-                }}>
-                <BlurView
-                  overlayColor=""
-                  blurType="light"
-                  blurAmount={10}
-                  blurRadius={5}
+          {categories2.map((item, id) => (
+            <>
+              {count()}
+              <Pressable
+                key={id}
+                style={styles.category}
+                onPress={() => navigation.navigate('Categories')}>
+                <View
                   style={{
-                    width: '100%',
-                    height: '100%',
+                    ...styles.shadow,
+                    backgroundColor: colors[counter],
+                  }}></View>
+                <Image
+                  source={item.image}
+                  style={{
+                    ...styles.categoryImage,
                   }}
                 />
-              </View>
-              <Image
-                source={item.image}
-                style={{
-                  ...styles.categoryImage,
-                }}
-              />
-              <Text
-                style={{
-                  color: '#555',
-                  fontSize: 16,
-                  marginTop: 10,
-                  fontFamily: 'Signika-Medium',
-                  textTransform: 'capitalize',
-                }}>
-                {item.text}
-              </Text>
-            </Pressable>
+                <Text
+                  style={{
+                    color: '#555',
+                    fontSize: 16,
+                    marginTop: 10,
+                    fontFamily: 'Signika-Medium',
+                    textTransform: 'capitalize',
+                  }}>
+                  {item.text}
+                </Text>
+              </Pressable>
+            </>
           ))}
+          <Pressable
+            style={styles.category}
+            onPress={() => navigation.navigate('Categories')}>
+            <View
+              style={{
+                ...styles.shadow,
+                backgroundColor: colors[6],
+              }}></View>
+            <Image
+              source={view}
+              style={{
+                ...styles.categoryImage,
+                // marginTop: 10,
+              }}
+            />
+            <Text
+              style={{
+                color: '#555',
+                fontSize: 16,
+                marginTop: 10,
+                fontFamily: 'Signika-Medium',
+                textTransform: 'capitalize',
+              }}>
+              View All
+            </Text>
+          </Pressable>
         </View>
       </View>
       <HomepageSliders heading="TOP FLYERS" link="Flyers" />
@@ -92,7 +129,6 @@ function Explore({navigation}) {
 }
 const styles = StyleSheet.create({
   body: {
-    // backgroundColor: '#f3f3f3',
     backgroundColor: '#fafafa',
     height: '100%',
   },
@@ -124,25 +160,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    marginBottom: 20,
+    marginBottom: 30,
     position: 'relative',
   },
   shadow: {
     position: 'absolute',
-    width: 70,
-    height: 70,
+    width: '70%',
+    height: '55%',
     overflow: 'hidden',
-    left: '-50%',
-    top: '-50%',
-    transform: [{translateX: 85}, {translateY: 50}],
+    // left: '-50%',
+    top: 25,
+    // transform: [{translateX: 85}, {translateY: 50}],
     zIndex: 0,
-    borderRadius: 999,
+    borderRadius: 15,
     borderWidth: 4,
     borderColor: 'rgba(255,255,255,.05)',
   },
   categoryImage: {
-    width: 65,
-    height: 65,
+    width: 75,
+    height: 70,
     resizeMode: 'cover',
     // borderRadius: 999,
   },

@@ -74,7 +74,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  banner: {width: '100%', resizeMode: 'cover', borderRadius: 10, height: 200},
+  banner: {
+    width: '100%',
+    resizeMode: 'cover',
+    // borderTopRightRadius: 10,
+    // borderTopLeftRadius: 10,
+    borderRadius: 10,
+    height: 200,
+  },
   details: {
     display: 'flex',
     flexDirection: 'row',

@@ -24,6 +24,7 @@ import {
 } from 'react-native-reanimated';
 import Refer from '../screens/refer';
 import Navbar from '../components/navbar';
+import Wallet from '../screens/wallet';
 
 const Drawer = createDrawerNavigator();
 
@@ -180,7 +181,7 @@ export default function DrawerNavigator(props) {
       />
       <Drawer.Screen
         name="Wallet"
-        component={TabNavigator}
+        component={Wallet}
         options={{
           item: {
             icon: require('../assets/wallet.png'),
