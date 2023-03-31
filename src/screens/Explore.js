@@ -82,7 +82,7 @@ function Explore({navigation}) {
                 />
                 <Text
                   style={{
-                    color: '#fff',
+                    color: '#555',
                     fontSize: 16,
                     marginTop: 10,
                     fontFamily: 'Signika-Medium',
@@ -110,7 +110,7 @@ function Explore({navigation}) {
             />
             <Text
               style={{
-                color: '#fff',
+                color: '#555',
                 fontSize: 16,
                 marginTop: 10,
                 fontFamily: 'Signika-Medium',
@@ -129,7 +129,6 @@ function Explore({navigation}) {
 }
 const styles = StyleSheet.create({
   body: {
-    // backgroundColor: '#f3f3f3',
     backgroundColor: '#fafafa',
     height: '100%',
   },
@@ -166,20 +165,20 @@ const styles = StyleSheet.create({
   },
   shadow: {
     position: 'absolute',
-    width: '105%',
-    height: '120%',
+    width: '70%',
+    height: '55%',
     overflow: 'hidden',
     // left: '-50%',
-    // top: '-50%',
+    top: 25,
     // transform: [{translateX: 85}, {translateY: 50}],
     zIndex: 0,
-    borderRadius: 20,
+    borderRadius: 15,
     borderWidth: 4,
     borderColor: 'rgba(255,255,255,.05)',
   },
   categoryImage: {
-    width: 65,
-    height: 65,
+    width: 75,
+    height: 70,
     resizeMode: 'cover',
     // borderRadius: 999,
   },

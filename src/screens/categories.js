@@ -61,9 +61,7 @@ function Categories({route, navigation}) {
               return (
                 <Pressable
                   onPress={() => {
-                    navigation.navigate('Subcategories', {
-                      subcategory: item.subcategories,
-                    });
+                    navigation.navigate('Subcategories', {category: item});
                   }}
                   key={id}
                   style={{
