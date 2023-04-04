@@ -25,6 +25,7 @@ import {
 import Refer from '../screens/refer';
 import Navbar from '../components/navbar';
 import Wallet from '../screens/wallet';
+import Wishlist from '../screens/wishlist';
 
 const Drawer = createDrawerNavigator();
 
@@ -185,7 +186,7 @@ export default function DrawerNavigator(props) {
       />
       <Drawer.Screen
         name="Wishlist"
-        component={TabNavigator}
+        component={Wishlist}
         options={{
           item: {
             icon: require('../assets/wishlist.png'),

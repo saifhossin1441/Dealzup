@@ -19,7 +19,6 @@ function Categories({route, navigation}) {
     '#EE8787',
     '#87D2EF',
     '#B59AE8',
-    '#937BB4',
   ];
   const [wrapperWidth, setwrapperWidth] = useState(0);
   let counter = 0;

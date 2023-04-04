@@ -6,6 +6,8 @@ import Navbar from '../components/navbar';
 import image1 from '../assets/slider1.jpg';
 import image2 from '../assets/slider2.jpg';
 import image3 from '../assets/slider3.jpg';
+import zomatoBanner from '../assets/zomatoBanner.jpg';
+import swiggyBanner from '../assets/swiggyBanner.jpg';
 import {Image} from 'react-native';
 import {categories} from '../../dummy/categories';
 import HomepageSliders from '../components/homepageSliders';
@@ -24,7 +26,6 @@ function Explore({navigation}) {
     '#EE8787',
     '#87D2EF',
     '#B59AE8',
-    '#937BB4',
   ];
   let counter = 0;
   const count = id => {
@@ -43,10 +44,10 @@ function Explore({navigation}) {
           activeDotColor="#ff7420"
           loop={true}>
           <View style={styles.slide}>
-            <Image style={styles.sliderImage} source={image1} />
+            <Image style={styles.sliderImage} source={swiggyBanner} />
           </View>
           <View style={styles.slide}>
-            <Image style={styles.sliderImage} source={image2} />
+            <Image style={styles.sliderImage} source={zomatoBanner} />
           </View>
           <View style={styles.slide}>
             <Image style={styles.sliderImage} source={image3} />

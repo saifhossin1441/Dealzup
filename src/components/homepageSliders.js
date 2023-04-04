@@ -10,10 +10,16 @@ import {
 } from 'react-native';
 import HomeCards from './homeCards';
 import logo1 from '../assets/logo1.jpg';
+import swiggy from '../assets/swiggy.png';
+import zomato from '../assets/zomato.png';
+
 import image1 from '../assets/slider1.jpg';
 import image2 from '../assets/slider2.jpg';
 import image3 from '../assets/slider3.jpg';
+import zomatoBanner from '../assets/zomatoBanner.jpg';
+import swiggyBanner from '../assets/swiggyBanner.jpg';
 import {useNavigation} from '@react-navigation/native';
+import BannerCard from './bannerCard';
 function HomepageSliders({heading, link}) {
   const navigation = useNavigation();
 
@@ -48,11 +54,29 @@ function HomepageSliders({heading, link}) {
       </View>
       <View>
         <ScrollView
-          horizontal={true}
+          // horizontal={true}
           contentContainerStyle={{paddingTop: 5, paddingBottom: 35}}>
-          <HomeCards name="Day 2 Day" logo={logo1} banner={image2} />
-          <HomeCards name="Nutuyu" logo={logo1} banner={image1} />
-          <HomeCards name="Leather Complex" logo={logo1} banner={image3} />
+          <BannerCard
+            name="Swiggy"
+            logo={swiggy}
+            banner={swiggyBanner}
+            message="Swiggy offering the Summer discount of the year!"
+            appealingText="Friday Sales"
+          />
+          <BannerCard
+            name="Zomato"
+            logo={zomato}
+            banner={zomatoBanner}
+            message="Zomato offering the Summer discount of the year!"
+            appealingText="Sales Mania"
+          />
+          <BannerCard
+            name="Luxary"
+            logo={logo1}
+            banner={image3}
+            message="Luxuary offering the best discount of the year!"
+            appealingText="Bumper Sales"
+          />
         </ScrollView>
       </View>
     </View>
