@@ -25,6 +25,7 @@ import {
 import Refer from '../screens/refer';
 import Navbar from '../components/navbar';
 import Wallet from '../screens/wallet';
+import About from '../screens/About';
 
 const Drawer = createDrawerNavigator();
 
@@ -150,7 +151,7 @@ export default function DrawerNavigator(props) {
         drawerStyle: styles.drawerStyles,
         drawerType: 'slide',
         overlayColor: 'transparent',
-        swipeEdgeWidth: Platform.OS === 'android' && 180,
+        swipeEdgeWidth: Platform.OS === 'android' && 40,
         sceneContainerStyle: styles.sceneStyles,
         headerShown: false,
       }}
@@ -212,7 +213,7 @@ export default function DrawerNavigator(props) {
       />
       <Drawer.Screen
         name="About"
-        component={TabNavigator}
+        component={About}
         options={{
           item: {
             icon: require('../assets/about.png'),
