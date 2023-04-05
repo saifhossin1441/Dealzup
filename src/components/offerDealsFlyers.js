@@ -16,12 +16,17 @@ import logo1 from '../assets/logo1.jpg';
 import image1 from '../assets/slider1.jpg';
 import image2 from '../assets/slider2.jpg';
 import image3 from '../assets/slider3.jpg';
+import swiggy from '../assets/swiggy.png';
+import zomato from '../assets/zomato.png';
+import zomatoBanner from '../assets/zomatoBanner.jpg';
+import swiggyBanner from '../assets/swiggyBanner.jpg';
 import HomeCards from './homeCards';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CheckBox from 'react-native-check-box';
 import RadioButtonRN from 'radio-buttons-react-native';
 import {categories} from '../../dummy/categories';
+import BannerCard from './bannerCard';
 function OfferDealsFlyers() {
   const [filterOption, setfilterOption] = useState(false);
   const [sortOption, setsortOption] = useState(false);
@@ -60,41 +65,47 @@ function OfferDealsFlyers() {
           </TouchableOpacity>
         </View>
         <View style={styles.cardsConatiner}>
-          <HomeCards
-            name="Luxary"
-            logo={logo1}
-            banner={image2}
-            renderScreen={true}
+          <BannerCard
+            name="Swiggy"
+            logo={swiggy}
+            banner={swiggyBanner}
+            message="Swiggy offering the Summer discount of the year!"
+            appealingText="Friday Sales"
           />
-          <HomeCards
-            name="Luxary"
-            logo={logo1}
-            banner={image1}
-            renderScreen={true}
+          <BannerCard
+            name="Zomato"
+            logo={zomato}
+            banner={zomatoBanner}
+            message="Zomato offering the Summer discount of the year!"
+            appealingText="Sales Mania"
           />
-          <HomeCards
+          <BannerCard
             name="Luxary"
             logo={logo1}
             banner={image3}
-            renderScreen={true}
+            message="Luxuary offering the best discount of the year!"
+            appealingText="Bumper Sales"
           />
-          <HomeCards
-            name="Luxary"
-            logo={logo1}
-            banner={image2}
-            renderScreen={true}
+          <BannerCard
+            name="Swiggy"
+            logo={swiggy}
+            banner={swiggyBanner}
+            message="Swiggy offering the Summer discount of the year!"
+            appealingText="Friday Sales"
           />
-          <HomeCards
-            name="Luxary"
-            logo={logo1}
-            banner={image1}
-            renderScreen={true}
+          <BannerCard
+            name="Zomato"
+            logo={zomato}
+            banner={zomatoBanner}
+            message="Zomato offering the Summer discount of the year!"
+            appealingText="Sales Mania"
           />
-          <HomeCards
+          <BannerCard
             name="Luxary"
             logo={logo1}
             banner={image3}
-            renderScreen={true}
+            message="Luxuary offering the best discount of the year!"
+            appealingText="Bumper Sales"
           />
         </View>
       </ScrollView>
