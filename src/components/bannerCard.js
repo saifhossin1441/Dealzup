@@ -46,14 +46,15 @@ function BannerCard({name, logo, banner, message, appealingText}) {
               justifyContent: 'flex-end',
               alignItems: 'center',
               marginLeft: 'auto',
-              width: '30%',
+              // width: '30%',
+              flex: 0.3,
             }}>
             <MaterialCommunityIcons
               name="signal-distance-variant"
               size={20}
               color="#555"
             />
-            <Text style={{...styles.location, maxWidth: '100%'}}>
+            <Text style={{...styles.location, maxWidth: '100%', flex: 0}}>
               2 km Away
             </Text>
           </View>
@@ -67,23 +68,26 @@ const styles = StyleSheet.create({
     width: '100%',
     borderColor: 'rgba(0,0,0,.2)',
     borderWidth: 0.5,
-    borderRadius: 20,
+    borderRadius: 10,
     backgroundColor: '#fff',
-    marginBottom: 30,
+    marginBottom: 10,
   },
   info: {
     padding: 15,
+    paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',
   },
   name: {
-    color: '#555',
+    color: '#333',
     fontSize: 20,
     marginLeft: 7,
+    fontFamily: 'Signika-Bold',
+    // fontWeight: '700',
   },
   logo: {
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
     borderRadius: 999,
   },
   banner: {
@@ -102,31 +106,38 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   message: {
-    color: '#666',
+    flex: 1,
+    color: '#333',
     letterSpacing: 1.5,
     textTransform: 'capitalize',
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 15,
+    fontFamily: 'Signika-Medium',
+    // fontWeight: '00',
     maxWidth: '70%',
     lineHeight: 20,
+    marginRight: 5,
   },
   appealingText: {
-    padding: 10,
+    padding: 5,
     paddingHorizontal: 10,
     backgroundColor: '#90EE90',
     borderRadius: 10,
     color: '#006400',
+    fontFamily: 'Signika-SemiBold',
+    // fontWeight: '500',
     fontSize: 16,
     marginLeft: 'auto',
   },
   location: {
-    color: '#000',
+    flex: 0.65,
+    color: '#666',
     letterSpacing: 1,
     textTransform: 'capitalize',
     fontSize: 14,
-    fontWeight: 'bold',
+    fontFamily: 'Signika-SemiBold',
+    // fontWeight: '700',
     marginLeft: 7,
-    maxWidth: '70%',
+    // maxWidth: '70%',
   },
 });
 export default BannerCard;

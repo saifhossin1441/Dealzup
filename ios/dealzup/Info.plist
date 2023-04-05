@@ -56,6 +56,9 @@
 		<string>Signika.ttf</string>
 		<string>Signika-Medium.ttf</string>
 		<string>Signika-SemiBold.ttf</string>
+		<string>Signika-Bold.ttf</string>
+		<string>Signika-Light.ttf</string>
+		<string>Signika-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -17,6 +17,9 @@
 		0F3E4B01A34442A6B09A1BAD /* Signika.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE75C2989736444C8CA65F7B /* Signika.ttf */; };
 		EB339363FC154CB5B58C5382 /* Signika-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4499C356D33475DB053D2F5 /* Signika-Medium.ttf */; };
 		F080761DF7EF4649BEDBFDEA /* Signika-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C18AC2DDF02405D871C2F5B /* Signika-SemiBold.ttf */; };
+		BA6A416DA24A4199A81D506A /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDF268934C164EC5ADD8DF16 /* Signika-Bold.ttf */; };
+		4FADFC691BC842A582709A92 /* Signika-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDB7D085164183AC8A3211 /* Signika-Light.ttf */; };
+		3E46CA7DECC0410CA1807D89 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03D9244C1D141298620919C /* Signika-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		AE75C2989736444C8CA65F7B /* Signika.ttf */ = {isa = PBXFileReference; name = "Signika.ttf"; path = "../src/assets/fonts/Signika.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A4499C356D33475DB053D2F5 /* Signika-Medium.ttf */ = {isa = PBXFileReference; name = "Signika-Medium.ttf"; path = "../src/assets/fonts/Signika-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8C18AC2DDF02405D871C2F5B /* Signika-SemiBold.ttf */ = {isa = PBXFileReference; name = "Signika-SemiBold.ttf"; path = "../src/assets/fonts/Signika-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CDF268934C164EC5ADD8DF16 /* Signika-Bold.ttf */ = {isa = PBXFileReference; name = "Signika-Bold.ttf"; path = "../src/assets/fonts/Signika-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5EFDB7D085164183AC8A3211 /* Signika-Light.ttf */ = {isa = PBXFileReference; name = "Signika-Light.ttf"; path = "../src/assets/fonts/Signika-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F03D9244C1D141298620919C /* Signika-Regular.ttf */ = {isa = PBXFileReference; name = "Signika-Regular.ttf"; path = "../src/assets/fonts/Signika-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,9 @@
 				AE75C2989736444C8CA65F7B /* Signika.ttf */,
 				A4499C356D33475DB053D2F5 /* Signika-Medium.ttf */,
 				8C18AC2DDF02405D871C2F5B /* Signika-SemiBold.ttf */,
+				CDF268934C164EC5ADD8DF16 /* Signika-Bold.ttf */,
+				5EFDB7D085164183AC8A3211 /* Signika-Light.ttf */,
+				F03D9244C1D141298620919C /* Signika-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -265,6 +274,9 @@
 				0F3E4B01A34442A6B09A1BAD /* Signika.ttf in Resources */,
 				EB339363FC154CB5B58C5382 /* Signika-Medium.ttf in Resources */,
 				F080761DF7EF4649BEDBFDEA /* Signika-SemiBold.ttf in Resources */,
+				BA6A416DA24A4199A81D506A /* Signika-Bold.ttf in Resources */,
+				4FADFC691BC842A582709A92 /* Signika-Light.ttf in Resources */,
+				3E46CA7DECC0410CA1807D89 /* Signika-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
