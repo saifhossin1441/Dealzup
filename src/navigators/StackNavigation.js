@@ -14,7 +14,7 @@ import Notification from '../screens/Notification';
 import Login from '../screens/Login';
 import CreateAccount from '../screens/CreateAccount';
 import Accounts from '../screens/accounts';
-import Products from '../screens/products';
+import Products from '../screens/Products';
 import ProductDetails from '../screens/Product-details';
 
 export default function StackNavigation() {
