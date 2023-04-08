@@ -36,7 +36,7 @@ function Refer({navigation, route}) {
             width: '100%',
             alignItems: 'center',
             justifyContent: 'center',
-            paddingTop: 80,
+            paddingTop: 50,
             ...styles.body,
           }}>
           <Image style={styles.illustration} source={refer} />

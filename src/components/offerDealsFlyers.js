@@ -179,7 +179,7 @@ function OfferDealsFlyers() {
             <View
               style={{
                 ...styles.optionConatiner,
-                padding: 15,
+                paddingHorizontal: 15,
               }}>
               <Text style={styles.heading}>Filter By Category</Text>
               <TouchableOpacity
@@ -225,11 +225,10 @@ function OfferDealsFlyers() {
                 marginVertical: 15,
                 marginLeft: 'auto',
                 borderRadius: 5,
-                height: 35,
               }}>
               <Pressable
-                style={{...styles.button, height: '100%'}}
-                android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}>
+                android_ripple={{color: 'rgba(0,0,0,.1)', borderless: true}}
+                style={{...styles.button}}>
                 <Text style={styles.buttonText}>APPLY</Text>
               </Pressable>
             </View>
@@ -252,7 +251,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 17,
+    fontSize: 15,
+    letterSpacing: 1,
   },
   heading: {
     color: '#333',

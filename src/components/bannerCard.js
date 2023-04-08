@@ -12,7 +12,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
 
-function BannerCard({name, logo, banner, message, appealingText}) {
+function BannerCard({name, logo, banner, message, appealingText, wishlist}) {
   const [hearted, sethearted] = useState(false);
 
   const navigation = useNavigation();
@@ -28,12 +28,27 @@ function BannerCard({name, logo, banner, message, appealingText}) {
           activeOpacity={0.5}
           onPress={() => sethearted(!hearted)}
           style={styles.iconConatiner}>
-          <FontAwesome
+          {wishlist ? (
+            <FontAwesome
+              name="heart"
+              size={22}
+              color="#fc4736"
+              style={styles.heart}
+            />
+          ) : (
+            <FontAwesome
+              name="heart"
+              size={22}
+              color={hearted ? '#fc4736' : '#99999970'}
+              style={styles.heart}
+            />
+          )}
+          {/* <FontAwesome
             name="heart"
             size={22}
             color={hearted ? '#fc4736' : '#99999970'}
             style={styles.heart}
-          />
+          /> */}
         </TouchableOpacity>
       </View>
       <Image source={banner} style={styles.banner} />
@@ -83,7 +98,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 10,
     backgroundColor: '#fff',
-    marginBottom: 10,
+    marginBottom: 15,
   },
   info: {
     padding: 15,

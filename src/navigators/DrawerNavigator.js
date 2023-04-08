@@ -28,6 +28,7 @@ import Wallet from '../screens/wallet';
 import Wishlist from '../screens/wishlist';
 import About from '../screens/About';
 import MerchantStack from './MerchantStack';
+import Contact from '../screens/contact';
 
 const Drawer = createDrawerNavigator();
 
@@ -223,7 +224,7 @@ export default function DrawerNavigator(props) {
       />
       <Drawer.Screen
         name="Contact"
-        component={TabNavigator}
+        component={Contact}
         options={{
           item: {
             icon: require('../assets/contact.png'),
