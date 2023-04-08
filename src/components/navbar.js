@@ -6,7 +6,6 @@ import Material from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/FontAwesome5';
 
 function Navbar({route, navigation}) {
-  console.log(Object.keys(navigation));
   return (
     <View style={styles.navbar}>
       <View style={styles.navName}>

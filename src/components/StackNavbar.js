@@ -5,8 +5,16 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function StackNavbar({route, navigation}) {
+  const bg_color = route?.params?.dark ? '#0e101b' : '#fafafa';
+  const color = route?.params?.dark ? '#eee' : '#333';
+
   return (
-    <View style={{...styles.navbar, paddingLeft: 22}}>
+    <View
+      style={{
+        ...styles.navbar,
+        paddingLeft: 22,
+        backgroundColor: bg_color,
+      }}>
       <View style={styles.navName}>
         <Pressable
           style={{
@@ -15,16 +23,16 @@ export default function StackNavbar({route, navigation}) {
             paddingHorizontal: 0,
           }}
           onPress={() => navigation.goBack()}>
-          <Feather name="chevron-left" size={25} color="#333" />
+          <Feather name="chevron-left" size={25} color={color} />
         </Pressable>
         <Text
           style={{
-            color: '#333',
+            color: color,
             fontSize: 22,
             fontWeight: '500',
             verticalAlign: 'middle',
           }}>
-          {route?.name}
+          {route.params?.page_name || route?.name}
         </Text>
       </View>
 
@@ -57,7 +65,6 @@ export default function StackNavbar({route, navigation}) {
 
 const styles = StyleSheet.create({
   navbar: {
-    backgroundColor: '#fafafa',
     // backgroundColor: 'orange',
     width: '100%',
     paddingHorizontal: 23,

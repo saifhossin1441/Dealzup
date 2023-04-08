@@ -59,7 +59,6 @@ function Wallet({navigation, route}) {
       no_icons: true,
     });
   }, []);
-  console.log('up' + Money);
   return (
     <DrawerView>
       <Navbar route={route} navigation={navigation} />
@@ -354,7 +353,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,.5)',
     padding: 10,
     borderRadius: 999,
-    marginBottom: 70,
+    marginBottom: 'auto',
   },
   cardIcon: {
     width: 40,

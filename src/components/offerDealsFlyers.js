@@ -34,9 +34,7 @@ function OfferDealsFlyers() {
 
   const [filterItems, setfilterItems] = useState([]);
   const handleChange = name => {
-    console.log('hi');
     var arr = filterItems;
-    console.log(name);
     if (filterItems.includes(name)) {
       setfilterItems(arr.filter(item => item !== name));
     } else {
@@ -47,10 +45,19 @@ function OfferDealsFlyers() {
     <ScrollView contentContainerStyle={{paddingBottom: 65}}>
       <ScrollView style={styles.body}>
         <View style={styles.optionConatiner}>
+          <Text
+            style={{
+              fontFamily: 'Signika-Medium',
+              fontSize: 16,
+              color: '#555',
+              marginRight: 'auto',
+            }}>
+            Showing 114 results
+          </Text>
           <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => setfilterOption(true)}>
-            <View style={styles.option}>
+            <View style={{...styles.option, marginRight: 10}}>
               <Feather name="filter" size={14} color="#333" />
               <Text style={styles.optionText}>Filter</Text>
             </View>
@@ -269,7 +276,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     paddingHorizontal: 12,
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     alignItems: 'center',
     marginVertical: 20,
   },

@@ -51,7 +51,9 @@ export default function Subcategories({route, navigation}) {
               count(id);
               return (
                 <Pressable
-                  onPress={() => {}}
+                  onPress={() => {
+                    navigation.navigate('Products', {page_name: item.text});
+                  }}
                   key={id}
                   style={{
                     ...styles.subcategory,

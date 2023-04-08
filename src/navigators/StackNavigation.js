@@ -14,6 +14,8 @@ import Notification from '../screens/Notification';
 import Login from '../screens/Login';
 import CreateAccount from '../screens/CreateAccount';
 import Accounts from '../screens/accounts';
+import Products from '../screens/products';
+import ProductDetails from '../screens/Product-details';
 
 export default function StackNavigation() {
   const Stack = createStackNavigator();
@@ -23,45 +25,56 @@ export default function StackNavigation() {
       screenOptions={{
         header: StackNavbar,
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-        animationEnabled:
-          Platform.OS == 'android' &&
-          parseInt(deviceInfoModule.getSystemVersion()) > 9
-            ? false
-            : true,
       }}>
       <Stack.Screen
         name="Drawer"
         component={DrawerNavigator}
-        options={{headerShown: false}}
+        options={{
+          // animationEnabled:
+          //   Platform.OS == 'android' &&
+          //   parseInt(deviceInfoModule.getSystemVersion()) > 9
+          //     ? false
+          //     : true,
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name="Search"
         component={Search}
         options={{
+          // animationEnabled:
+          //   Platform.OS == 'android' &&
+          //   parseInt(deviceInfoModule.getSystemVersion()) > 9
+          //     ? false
+          //     : true,
           headerShown: false,
         }}
       />
       <Stack.Screen
         name="Notification"
         component={Notification}
-        // options={{
-        //   animationEnabled:
-        //     Platform.OS == 'android' &&
-        //     parseInt(deviceInfoModule.getSystemVersion()) > 9
-        //       ? false
-        //       : true,
-        // }}
+        options={
+          {
+            // animationEnabled:
+            //   Platform.OS == 'android' &&
+            //   parseInt(deviceInfoModule.getSystemVersion()) > 9
+            //     ? false
+            //     : true,
+          }
+        }
       />
       <Stack.Screen
         name="Categories"
         component={Categories}
-        // options={{
-        //   animationEnabled:
-        //     Platform.OS == 'android' &&
-        //     parseInt(deviceInfoModule.getSystemVersion()) > 9
-        //       ? false
-        //       : true,
-        // }}
+        options={
+          {
+            // animationEnabled:
+            //   Platform.OS == 'android' &&
+            //   parseInt(deviceInfoModule.getSystemVersion()) > 9
+            //     ? false
+            //     : true,
+          }
+        }
         // initialParams={{title: 'Browse Categories'}}
       />
       <Stack.Screen
@@ -82,6 +95,16 @@ export default function StackNavigation() {
       <Stack.Screen
         name="Accounts"
         component={Accounts}
+        // initialParams={{title: 'Browse Subcategories'}}
+      />
+      <Stack.Screen
+        name="Products"
+        component={Products}
+        // initialParams={{title: 'Browse Subcategories'}}
+      />
+      <Stack.Screen
+        name="ProductDetails"
+        component={ProductDetails}
         // initialParams={{title: 'Browse Subcategories'}}
       />
     </Stack.Navigator>

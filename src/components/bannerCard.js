@@ -1,13 +1,26 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useNavigation} from '@react-navigation/native';
 
 function BannerCard({name, logo, banner, message, appealingText}) {
   const [hearted, sethearted] = useState(false);
+
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.card}>
+    <Pressable
+      style={styles.card}
+      onPress={() => navigation.navigate('ProductDetails')}>
       <View style={styles.info}>
         <Image source={logo} style={styles.logo} />
         <Text style={styles.name}>{name}</Text>
@@ -60,7 +73,7 @@ function BannerCard({name, logo, banner, message, appealingText}) {
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
 const styles = StyleSheet.create({

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -27,6 +27,7 @@ import Navbar from '../components/navbar';
 import Wallet from '../screens/wallet';
 import Wishlist from '../screens/wishlist';
 import About from '../screens/About';
+import MerchantStack from './MerchantStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -60,9 +61,6 @@ const DrawerItemList = ({state, descriptors, navigation, styles}) => {
             navigation.navigate(route.name);
           }
         };
-        {
-          /* console.log(options) */
-        }
 
         const drawerItem = options.item;
         const activeItemColor = isFocused ? '#fff' : null;
@@ -86,7 +84,7 @@ const CustomDrawer = props => {
   const {state, descriptors, navigation} = props;
   const scrollRef = useRef(null);
 
-  const login = true;
+  const [login, setLogin] = useState(false);
 
   const drawerProgress = useDrawerProgress();
 
@@ -132,7 +130,8 @@ const CustomDrawer = props => {
       </Animated.ScrollView>
       {/* footer */}
       <Pressable
-        style={{...styles.drawerItem, marginBottom: 20, paddingHorizontal: 10}}>
+        style={{...styles.drawerItem, marginBottom: 20, paddingHorizontal: 10}}
+        onPress={() => setLogin(!login)}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/logout.png')}
@@ -169,11 +168,12 @@ export default function DrawerNavigator(props) {
       />
       <Drawer.Screen
         name="Go to Merchants"
-        component={TabNavigator}
+        component={MerchantStack}
         options={{
           item: {
             icon: require('../assets/store.png'),
           },
+          headerShown: false,
         }}
       />
       <Drawer.Screen
@@ -203,7 +203,7 @@ export default function DrawerNavigator(props) {
           },
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Flowchart"
         component={TabNavigator}
         options={{
@@ -211,7 +211,7 @@ export default function DrawerNavigator(props) {
             icon: require('../assets/chart.png'),
           },
         }}
-      />
+      /> */}
       <Drawer.Screen
         name="About"
         component={About}
