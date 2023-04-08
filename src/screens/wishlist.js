@@ -7,11 +7,10 @@ import zomatoBanner from '../assets/zomatoBanner.jpg';
 import zomato from '../assets/zomato.png';
 
 const Section = ({heading, color}) => {
-  const colors = ['#9DDAD1', '#F3A186', '#98B7E8'];
   return (
     <View>
       <Text style={{...styles.heading, backgroundColor: color}}>{heading}</Text>
-      {[1, 2].map((_, id) => {
+      {[1].map((_, id) => {
         return (
           <BannerCard
             key={id}
@@ -38,7 +37,7 @@ function Wishlist({route, navigation}) {
       <SafeAreaView style={styles.body}>
         <Navbar route={route} navigation={navigation} />
         <ScrollView style={{padding: 10}}>
-          <Section heading="Flyers" color="#9DDAD1" />
+          <Section heading="Flyers" color="#87D2EF" />
           <Section heading="Deals" color="#8281F3" />
           <Section heading="Offers" color="#EE8787" />
         </ScrollView>

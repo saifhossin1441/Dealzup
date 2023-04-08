@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {Image, Pressable, StyleSheet, Text} from 'react-native';
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import {ScrollView, View} from 'react-native';
 import {categories} from '../../dummy/categories';
 import Feather from 'react-native-vector-icons/Feather';
@@ -58,7 +64,8 @@ function Categories({route, navigation}) {
             {categories.map((item, id) => {
               count(id);
               return (
-                <Pressable
+                <TouchableOpacity
+                  activeOpacity={0.7}
                   onPress={() => {
                     navigation.navigate('Subcategories', {
                       subcategories: item.subcategories,
@@ -72,7 +79,7 @@ function Categories({route, navigation}) {
                   <Image source={item.image} style={styles.categoryImage} />
                   <Text style={styles.text}>{item.text}</Text>
                   <View style={styles.circle}></View>
-                </Pressable>
+                </TouchableOpacity>
               );
             })}
           </View>

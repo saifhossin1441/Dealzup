@@ -27,6 +27,7 @@ import Navbar from '../components/navbar';
 import Wallet from '../screens/wallet';
 import Wishlist from '../screens/wishlist';
 import About from '../screens/About';
+import Contact from '../screens/contact';
 
 const Drawer = createDrawerNavigator();
 
@@ -203,7 +204,7 @@ export default function DrawerNavigator(props) {
           },
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Flowchart"
         component={TabNavigator}
         options={{
@@ -211,7 +212,7 @@ export default function DrawerNavigator(props) {
             icon: require('../assets/chart.png'),
           },
         }}
-      />
+      /> */}
       <Drawer.Screen
         name="About"
         component={About}
@@ -223,7 +224,7 @@ export default function DrawerNavigator(props) {
       />
       <Drawer.Screen
         name="Contact"
-        component={TabNavigator}
+        component={Contact}
         options={{
           item: {
             icon: require('../assets/contact.png'),

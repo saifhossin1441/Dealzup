@@ -1,5 +1,11 @@
 import React from 'react';
-import {ImageBackground, ScrollView, StyleSheet, Pressable} from 'react-native';
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Pressable,
+  TouchableOpacity,
+} from 'react-native';
 import {View, Text} from 'react-native';
 import Slick from 'react-native-slick';
 import Navbar from '../components/navbar';
@@ -66,7 +72,8 @@ function Explore({navigation}) {
           {categories2.map((item, id) => {
             count();
             return (
-              <Pressable
+              <TouchableOpacity
+                activeOpacity={0.4}
                 key={id}
                 style={styles.category}
                 onPress={() =>
@@ -95,10 +102,11 @@ function Explore({navigation}) {
                   }}>
                   {item.text}
                 </Text>
-              </Pressable>
+              </TouchableOpacity>
             );
           })}
-          <Pressable
+          <TouchableOpacity
+            activeOpacity={0.4}
             style={styles.category}
             onPress={() => navigation.navigate('Categories')}>
             <View
@@ -123,7 +131,7 @@ function Explore({navigation}) {
               }}>
               View All
             </Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
       <HomepageSliders heading="TOP FLYERS" link="Flyers" />

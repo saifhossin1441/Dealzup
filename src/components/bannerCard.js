@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 10,
     backgroundColor: '#fff',
-    marginBottom: 10,
+    marginBottom: 15,
   },
   info: {
     padding: 15,
