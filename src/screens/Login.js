@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -11,13 +11,27 @@ import {
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome';
 import Foundation from 'react-native-vector-icons/Foundation';
+import { Auth } from '../context/authContext';
 
 function Login({navigation}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+
+  const {user, login, get_user} = useContext(Auth)
+
   useEffect(() => {
     navigation.setParams({
       no_icons: true,
     });
   }, []);
+
+  const log_in = async() => {
+    login(email, password).then((res) => {console.log("res",res)
+      if(user){
+        navigation.navigate("Home")
+      }
+    }).catch(err => console.log(err.response.data))
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,6 +48,8 @@ function Login({navigation}) {
             placeholder="Email"
             style={styles.input}
             placeholderTextColor="#989ebe"
+            value={email}
+            onChangeText={text => setEmail(text)}
           />
         </View>
         <View
@@ -46,13 +62,15 @@ function Login({navigation}) {
             style={styles.input}
             secureTextEntry={true}
             placeholderTextColor="#989ebe"
+            value={password}
+            onChangeText={text => setPassword(text)}
           />
           <Pressable style={styles.forgotButton}>
             <Text style={styles.forgotButtonText}>Forgot?</Text>
           </Pressable>
         </View>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={log_in}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       <TouchableOpacity

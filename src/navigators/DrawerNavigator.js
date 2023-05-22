@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useContext, useMemo, useRef, useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -29,6 +29,8 @@ import Wishlist from '../screens/wishlist';
 import About from '../screens/About';
 import MerchantStack from './MerchantStack';
 import Contact from '../screens/contact';
+import { Auth } from '../context/authContext';
+import {MMKV} from "react-native-mmkv"
 
 const Drawer = createDrawerNavigator();
 
@@ -85,7 +87,8 @@ const CustomDrawer = props => {
   const {state, descriptors, navigation} = props;
   const scrollRef = useRef(null);
 
-  const [login, setLogin] = useState(false);
+  const storage = new MMKV();
+  const token = useMemo(() => storage.getString("user_token"), [storage.getString("user_token")])
 
   const drawerProgress = useDrawerProgress();
 
@@ -105,19 +108,19 @@ const CustomDrawer = props => {
       {/* header */}
       <Pressable
         style={styles.accounts}
-        onPress={() => navigation.navigate(login ? 'Accounts' : 'Login')}>
+        onPress={() => navigation.navigate(token ? 'Accounts' : 'Login')}>
         <Image
           source={
-            login
+            token
               ? require('../assets/avatar.jpg')
               : require('../assets/logo.jpeg')
           }
           style={styles.avatar}
         />
         <Text style={styles.user_name}>
-          {login ? 'Anas Alam' : 'Login/Register'}
+          {token ? 'Anas Alam' : 'Login/Register'}
         </Text>
-        {login && <Text style={styles.viewProfile}>View Profile</Text>}
+        {token && <Text style={styles.viewProfile}>View Profile</Text>}
       </Pressable>
       {/* Drawer List Item */}
       <Animated.ScrollView
@@ -132,7 +135,7 @@ const CustomDrawer = props => {
       {/* footer */}
       <Pressable
         style={{...styles.drawerItem, marginBottom: 20, paddingHorizontal: 10}}
-        onPress={() => setLogin(!login)}>
+        onPress={() => storage.delete("user_token")}>
         <View style={styles.iconContainer}>
           <Image
             source={require('../assets/logout.png')}
