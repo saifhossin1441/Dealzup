@@ -1,6 +1,6 @@
 import React from 'react';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
-import {View, Text, Pressable, StyleSheet} from 'react-native';
+import {View, Text, Pressable, StyleSheet, Platform, StatusBar} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'orange',
     width: '100%',
     paddingHorizontal: 23,
-    paddingTop: 15,
+    paddingTop: Platform.OS == 'android'?  StatusBar.currentHeight  : 50,
     paddingBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',

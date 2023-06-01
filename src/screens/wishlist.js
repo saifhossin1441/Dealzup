@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { ScrollView, StyleSheet, Text, View} from 'react-native';
 import BannerCard from '../components/bannerCard';
 import DrawerView from '../components/DrawerView';
 import Navbar from '../components/navbar';
@@ -34,14 +34,14 @@ function Wishlist({route, navigation}) {
   }, []);
   return (
     <DrawerView>
-      <SafeAreaView style={styles.body}>
+      <View style={styles.body}>
         <Navbar route={route} navigation={navigation} />
         <ScrollView style={{padding: 10}}>
           <Section heading="Flyers" color="#87D2EF" />
           <Section heading="Deals" color="#8281F3" />
           <Section heading="Offers" color="#EE8787" />
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </DrawerView>
   );
 }

@@ -9,10 +9,11 @@ import {
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
+import Screen from '../components/Screen';
 
 export default function Search({route, navigation}) {
   return (
-    <View style={styles.container}>
+    <Screen style={styles.container}>
       <View style={styles.searchbar}>
         <Pressable
           style={{paddingVertical: 5}}
@@ -85,7 +86,7 @@ export default function Search({route, navigation}) {
           />
         </View>
       </ScrollView>
-    </View>
+    </Screen>
   );
 }
 

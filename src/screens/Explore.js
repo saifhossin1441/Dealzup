@@ -6,7 +6,7 @@ import {
   Pressable,
   TouchableOpacity,
 } from 'react-native';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import Slick from 'react-native-slick';
 import Navbar from '../components/navbar';
 import image1 from '../assets/slider1.jpg';
@@ -14,15 +14,16 @@ import image2 from '../assets/slider2.jpg';
 import image3 from '../assets/slider3.jpg';
 import zomatoBanner from '../assets/zomatoBanner.jpg';
 import swiggyBanner from '../assets/swiggyBanner.jpg';
-import {Image} from 'react-native';
-import {categories} from '../../dummy/categories';
+import { Image } from 'react-native';
+import { categories } from '../../dummy/categories';
 import HomepageSliders from '../components/homepageSliders';
-import {BlurView} from '@react-native-community/blur';
+import { BlurView } from '@react-native-community/blur';
 import coupon from '../assets/coupon.png';
 import ticket from '../assets/token.png';
 import view from '../assets/viewAll.png';
+import Screen from '../components/Screen';
 
-function Explore({navigation}) {
+function Explore({ navigation }) {
   const colors = [
     '#9DDAD1',
     '#F3A186',
@@ -41,7 +42,7 @@ function Explore({navigation}) {
   const categories2 = [...categories];
   categories2.length = 5;
   return (
-    <ScrollView style={styles.body} contentContainerStyle={{paddingBottom: 50}}>
+    <ScrollView style={styles.body} contentContainerStyle={{ paddingBottom: 50 }}>
       <View style={styles.wrapper}>
         <Slick
           showsButtons={false}
@@ -60,7 +61,7 @@ function Explore({navigation}) {
           </View>
         </Slick>
       </View>
-      <View style={{paddingHorizontal: 10}}>
+      <View style={{ paddingHorizontal: 10 }}>
         {/* <Text style={styles.heading}>Top Categories</Text> */}
         <View
           style={{

@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   StyleSheet,
   TextInput,
   Pressable,
@@ -21,7 +20,7 @@ export default function CreateAccount({navigation}) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ScrollView style={{flex: 1}}>
         <View>
           <Text style={styles.heading}>Become a</Text>
@@ -103,7 +102,7 @@ export default function CreateAccount({navigation}) {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

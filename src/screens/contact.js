@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -58,7 +57,7 @@ function Contact({route, navigation}) {
   };
   return (
     <DrawerView>
-      <SafeAreaView style={styles.body}>
+      <View style={styles.body}>
         <Navbar route={route} navigation={navigation} />
         <ScrollView style={{padding: 10}}>
           <View
@@ -177,7 +176,7 @@ function Contact({route, navigation}) {
             </View>
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </DrawerView>
   );
 }

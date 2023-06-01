@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     // width: '100%',
     // height: '100%',
-    borderWidth: 3,
+    // borderWidth: 3,
     // borderColor: '#e9e9e9',
     borderRadius: 9999,
     // transform: [{translateX: -999}],

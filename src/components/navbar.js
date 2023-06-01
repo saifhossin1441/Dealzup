@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Pressable, Text, StyleSheet} from 'react-native';
+import {View, Pressable, Text, StyleSheet, StatusBar, Platform} from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'orange',
     width: '100%',
     paddingHorizontal: 23,
-    paddingTop: 15,
+    paddingTop:  Platform.OS == 'android'?  StatusBar.currentHeight  : 50,
     paddingBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   StyleSheet,
   TextInput,
   Pressable,
@@ -34,7 +33,7 @@ function Login({navigation}) {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View>
         <Text style={styles.heading}>Hi there!</Text>
         <Text style={styles.heading}>Welcome Back.</Text>
@@ -92,7 +91,7 @@ function Login({navigation}) {
           />
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
